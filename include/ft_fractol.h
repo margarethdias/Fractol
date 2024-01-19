@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:27:44 by mdias             #+#    #+#             */
-/*   Updated: 2024/01/15 21:35:10 by mdias            ###   ########.fr       */
+/*   Updated: 2024/01/19 20:06:46 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,24 @@
 # define WIDTH 512
 # define HEIGHT 512
 
+/*Image Struct
+- Pixels buffer
+- mlx values */
+
+
+
+/*Fractal Struct
+* MLX 
+* Image
+* Hooks value
+*/
+typedef struct s_fractal
+{
+	
+}
+
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	ft_putstr_fd(char *s, int fd);
 // /**
 //  * Main MLX handle, carries important data in regards to the program.
 //  * @param window The window itself.

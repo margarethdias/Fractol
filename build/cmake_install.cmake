@@ -1,4 +1,4 @@
-# Install script for directory: /nfs/homes/mdias/Formação - Fase 1/Fractol/lib/MLX42
+# Install script for directory: /nfs/homes/mdias/Formação - Fase 1/Fractol/.lib/MLX42
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -46,7 +46,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/include" TYPE DIRECTORY FILES "/nfs/homes/mdias/Formação - Fase 1/Fractol/lib/MLX42/./include/MLX42" FILES_MATCHING REGEX "/MLX42\\.h$")
+file(INSTALL DESTINATION "/usr/local/include" TYPE DIRECTORY FILES "/nfs/homes/mdias/Formação - Fase 1/Fractol/.lib/MLX42/./include/MLX42" FILES_MATCHING REGEX "/MLX42\\.h$")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

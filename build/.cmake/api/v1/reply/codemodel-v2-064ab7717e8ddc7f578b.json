@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "mlx42::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-mlx42-Debug-db68adeb22538cc20e8c.json",
+					"jsonFile" : "target-mlx42-Debug-e1d7c65f80ff7f77d2c7.json",
 					"name" : "mlx42",
 					"projectIndex" : 0
 				}
@@ -50,7 +50,7 @@
 	"paths" : 
 	{
 		"build" : "/nfs/homes/mdias/Formação - Fase 1/Fractol/build",
-		"source" : "/nfs/homes/mdias/Formação - Fase 1/Fractol/lib/MLX42"
+		"source" : "/nfs/homes/mdias/Formação - Fase 1/Fractol/.lib/MLX42"
 	},
 	"version" : 
 	{
