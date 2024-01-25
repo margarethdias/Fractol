@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:27:44 by mdias             #+#    #+#             */
-/*   Updated: 2024/01/19 20:06:46 by mdias            ###   ########.fr       */
+/*   Updated: 2024/01/25 00:19:25 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,15 @@
 # define WIDTH 512
 # define HEIGHT 512
 
+# define ERROR_MSG "Please, use the right input: \n\t\"./fractol mandelbrot\" or \n\t\"./julia <value 1> <value 2>\" \n"
+
+/*Struct to define the complex values*/
+typedef struct	s_complex
+{
+	double real; // cartesian x
+	double i; // cartesian y
+}				t_complex;
+
 /*Image Struct
 - Pixels buffer
 - mlx values */
@@ -38,10 +47,12 @@
 typedef struct s_fractal
 {
 	
-}
+}				t_fractal;
 
+// *Strings Utils*
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ft_putstr_fd(char *s, int fd);
+
 // /**
 //  * Main MLX handle, carries important data in regards to the program.
 //  * @param window The window itself.

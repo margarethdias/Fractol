@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 20:06:45 by mdias             #+#    #+#             */
-/*   Updated: 2024/01/19 19:18:52 by mdias            ###   ########.fr       */
+/*   Updated: 2024/01/25 00:18:03 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_putstr_fd(char *s, int fd)
 		i = 0;
 		while (s[i])
 		{
-			ft_putchar_fd(s[i], fd);
+			write(fd, &s[i], 1);
 			i++;
 		}
 	}
