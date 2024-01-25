@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:27:44 by mdias             #+#    #+#             */
-/*   Updated: 2024/01/25 00:58:35 by mdias            ###   ########.fr       */
+/*   Updated: 2024/01/25 01:22:48 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
-# include "../.lib/MLX42/include/MLX42/MLX42.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdbool.h>
+# include <math.h>
+# include "../.lib/MLX42/include/MLX42/MLX42.h"
 
 # define WIDTH 800
 # define HEIGHT 800
