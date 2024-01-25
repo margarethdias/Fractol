@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   fractal_init.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/18 19:30:09 by mdias             #+#    #+#             */
-/*   Updated: 2024/01/25 00:36:10 by mdias            ###   ########.fr       */
+/*   Created: 2024/01/25 00:49:30 by mdias             #+#    #+#             */
+/*   Updated: 2024/01/25 00:57:34 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_fractol.h"
 
-int main(int argc, char **argv)
+void	fractal_init(t_fractal	*fractal)
 {
-	t_fractal	fractal;
-	mlx_t		*mlx;
-	
-	if (argc == 2 && !ft_strncmp(argv[1], "mandelbrot", 11) 
-		|| argc == 2 && !ft_strncmp(argv[1], "julia", 6))
+	fractal->mlx = mlx_init(WIDTH, HEIGHT, fractal->name, false);
+	if(!fractal->mlx)
+		exit(EXIT_FAILURE);
+	fractal->img = mlx_new_image(fractal->mlx, WIDTH, HEIGHT);
+	if (!fractal->img)
 	{
-			
-	}
-	else
-	{
-		ft_putstr_fd(ERROR_MSG, STDERR_FILENO);
+		mlx_terminate(fractal->mlx);
 		exit(EXIT_FAILURE);
 	}
+	
 }

@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:27:44 by mdias             #+#    #+#             */
-/*   Updated: 2024/01/25 00:19:25 by mdias            ###   ########.fr       */
+/*   Updated: 2024/01/25 00:58:35 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include <stdlib.h>
 # include <stdbool.h>
 
-# define WIDTH 512
-# define HEIGHT 512
+# define WIDTH 800
+# define HEIGHT 800
 
 # define ERROR_MSG "Please, use the right input: \n\t\"./fractol mandelbrot\" or \n\t\"./julia <value 1> <value 2>\" \n"
 
@@ -33,12 +33,6 @@ typedef struct	s_complex
 	double i; // cartesian y
 }				t_complex;
 
-/*Image Struct
-- Pixels buffer
-- mlx values */
-
-
-
 /*Fractal Struct
 * MLX 
 * Image
@@ -46,6 +40,14 @@ typedef struct	s_complex
 */
 typedef struct s_fractal
 {
+	mlx_image_t		*img;
+	mlx_t			*mlx;
+	char			*name;
+	double			xmin;
+	double			xmax;
+	double			ymin;
+	double			ymax;
+	
 	
 }				t_fractal;
 
