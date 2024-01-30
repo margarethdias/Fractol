@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:27:44 by mdias             #+#    #+#             */
-/*   Updated: 2024/01/25 01:22:48 by mdias            ###   ########.fr       */
+/*   Updated: 2024/01/29 22:24:26 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,28 @@
 
 # define WIDTH 800
 # define HEIGHT 800
+
+// Colors
+# define BLACK		0x000000FF
+# define WHITE		0xFFFFFFFF
+# define MAGENTA	0xFF00FFFF
+# define CYAN		0x00FFFFFF
+# define YELLOW		0xFFFF00FF
+# define ORANGE		0xFFA500FF
+# define PURPLE		0x800080FF
+# define PINK		0xFFC0CBFF
+# define LIME		0x32CD32FF
+# define DEEP		0xFF1493FF
+# define GREEN		0x00FF00FF
+# define VIOLET		0x8A2BE2FF
+# define ORANGER	0xFF4500FF
+# define TOMATO		0xFF6347FF
+# define AQUA		0x00FFFFFF
+# define TEAL		0x008080FF
+# define GOLD		0xFFD700FF
+# define SILVER		0xC0C0C0FF
+# define GRAY		0x808080FF
+# define BROWN		0xA52A2AFF
 
 # define ERROR_MSG "Please, use the right input: \n\t\"./fractol mandelbrot\" or \n\t\"./julia <value 1> <value 2>\" \n"
 
@@ -48,9 +70,19 @@ typedef struct s_fractal
 	double			xmax;
 	double			ymin;
 	double			ymax;
-	
+	double			escape_value; // hypotenuse
+	int				iterations_def; // value tight with the image quality and rendering speed
+	int				color;
 	
 }				t_fractal;
+
+void	fractal_render(t_fractal *fractal);
+void	fractal_init(t_fractal	*fractal);
+
+// *Math*
+double		map(double unscaled_num, double new_min, double new_max, double old_min, double old_max);
+t_complex	complex_sum(t_complex z1, t_complex z2);
+t_complex	complex_square(t_complex z);
 
 // *Strings Utils*
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
