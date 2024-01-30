@@ -1,4 +1,4 @@
-NAME	:= Game
+NAME	:= fractol
 #CFLAGS	:= -Wextra -Wall -Werror -Wunreachable-code -Ofast
 LIBMLX	:= ./.lib/MLX42
 

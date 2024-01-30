@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 22:27:29 by mdias             #+#    #+#             */
-/*   Updated: 2024/01/29 22:30:22 by mdias            ###   ########.fr       */
+/*   Updated: 2024/01/29 22:36:58 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	handle_pixel(int x, int y, t_fractal *fractal)
 	while (i < fractal->iterations_def)
 	{
 		z = complex_sum(complex_square(z), c);
-		if ((z.real * z.real) + (z.i * z.i) > fractal->escaped_value)
+		if ((z.real * z.real) + (z.i * z.i) > fractal->escape_value)
 		{
 			fractal->color = map(i, BLACK, WHITE, 0, fractal->iterations_def);
 			mlx_put_pixel(fractal->img, x, y, fractal->color);
@@ -54,4 +54,5 @@ void	fractal_render(t_fractal *fractal)
 			handle_pixel(x, y, fractal);
 		}
 	}
+	mlx_image_to_window(fractal->mlx, fractal->img, 0,0);
 }

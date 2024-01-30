@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:27:44 by mdias             #+#    #+#             */
-/*   Updated: 2024/01/29 22:24:26 by mdias            ###   ########.fr       */
+/*   Updated: 2024/01/29 22:35:04 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ typedef struct s_fractal
 
 void	fractal_render(t_fractal *fractal);
 void	fractal_init(t_fractal	*fractal);
+void	handle_pixel(int x, int y, t_fractal *fractal);
+void	data_init(t_fractal	*fractal);
 
 // *Math*
 double		map(double unscaled_num, double new_min, double new_max, double old_min, double old_max);
