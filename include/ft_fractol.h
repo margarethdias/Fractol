@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:27:44 by mdias             #+#    #+#             */
-/*   Updated: 2024/01/31 22:48:16 by mdias            ###   ########.fr       */
+/*   Updated: 2024/01/31 22:52:38 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	handle_pixel(int x, int y, t_fractal *fractal);
 void	data_init(t_fractal	*fractal);
 
 //*HOOKS*
-static void keyboard_arrows(t_fractal *fractal);
+//static void keyboard_arrows(t_fractal *fractal);
 void	keyhook(void *param);
 
 // *Math*

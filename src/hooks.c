@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:19:57 by mdias             #+#    #+#             */
-/*   Updated: 2024/01/31 22:51:43 by mdias            ###   ########.fr       */
+/*   Updated: 2024/01/31 22:57:41 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,22 @@ static void	keyboard_arrows(t_fractal *fractal)
 {
 	if (mlx_is_key_down(fractal->mlx, MLX_KEY_UP))
 	{
-		fractal->shift_y -= 0.3;
+		fractal->shift_y -= 0.5;
 		fractal_render(fractal);
 	}
-		if (mlx_is_key_down(fractal->mlx, MLX_KEY_DOWN))
+	if (mlx_is_key_down(fractal->mlx, MLX_KEY_DOWN))
 	{
-		fractal->shift_y += 0.3;
+		fractal->shift_y += 0.5;
 		fractal_render(fractal);
 	}
-		if (mlx_is_key_down(fractal->mlx, MLX_KEY_LEFT))
+	if (mlx_is_key_down(fractal->mlx, MLX_KEY_LEFT))
 	{
-		fractal->shift_x -= 0.3;
+		fractal->shift_x -= 0.5;
 		fractal_render(fractal);
 	}
-		if (mlx_is_key_down(fractal->mlx, MLX_KEY_RIGHT))
+	if (mlx_is_key_down(fractal->mlx, MLX_KEY_RIGHT))
 	{
-		fractal->shift_x += 0.3;
+		fractal->shift_x += 0.5;
 		fractal_render(fractal);
 	}
 }
