@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:27:44 by mdias             #+#    #+#             */
-/*   Updated: 2024/01/29 22:35:04 by mdias            ###   ########.fr       */
+/*   Updated: 2024/01/31 22:48:16 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ typedef struct s_fractal
 	double			xmax;
 	double			ymin;
 	double			ymax;
+	double			shift_y;
+	double			shift_x;
 	double			escape_value; // hypotenuse
 	int				iterations_def; // value tight with the image quality and rendering speed
 	int				color;
@@ -80,6 +82,10 @@ void	fractal_render(t_fractal *fractal);
 void	fractal_init(t_fractal	*fractal);
 void	handle_pixel(int x, int y, t_fractal *fractal);
 void	data_init(t_fractal	*fractal);
+
+//*HOOKS*
+static void keyboard_arrows(t_fractal *fractal);
+void	keyhook(void *param);
 
 // *Math*
 double		map(double unscaled_num, double new_min, double new_max, double old_min, double old_max);

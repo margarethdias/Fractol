@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 00:49:30 by mdias             #+#    #+#             */
-/*   Updated: 2024/01/30 22:33:13 by mdias            ###   ########.fr       */
+/*   Updated: 2024/01/31 21:18:50 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ void	data_init(t_fractal	*fractal)
 	fractal->escape_value = 4; // 2 ^ 2 my hypotenus
 	fractal->iterations_def = 42;
 }
+
+// void	events_init(t_fractal *fractal)
+// {
+	
+// }
+
 void	fractal_init(t_fractal	*fractal)
 {
 	fractal->mlx = mlx_init(WIDTH, HEIGHT, fractal->name, false);
