@@ -6,11 +6,11 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 00:49:30 by mdias             #+#    #+#             */
-/*   Updated: 2024/01/31 21:18:50 by mdias            ###   ########.fr       */
+/*   Updated: 2024/02/05 20:57:49 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_fractol.h"
+#include "../include/fractol.h"
 
 void	data_init(t_fractal	*fractal)
 {

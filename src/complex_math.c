@@ -6,11 +6,11 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 22:53:23 by mdias             #+#    #+#             */
-/*   Updated: 2024/01/30 22:33:23 by mdias            ###   ########.fr       */
+/*   Updated: 2024/02/05 20:57:45 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_fractol.h"
+#include "../include/fractol.h"
 
 double	map(double unscaled_num, double new_min, double new_max, double old_min, double old_max)
 {

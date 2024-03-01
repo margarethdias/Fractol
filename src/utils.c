@@ -6,11 +6,11 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 20:06:45 by mdias             #+#    #+#             */
-/*   Updated: 2024/01/25 00:18:03 by mdias            ###   ########.fr       */
+/*   Updated: 2024/02/05 20:58:12 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_fractol.h"
+#include "../include/fractol.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
