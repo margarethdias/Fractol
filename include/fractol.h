@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:27:44 by mdias             #+#    #+#             */
-/*   Updated: 2024/02/29 20:52:29 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/01 17:47:40 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 
 # define WIDTH 800
 # define HEIGHT 800
+# define ESCAPE_COUNT 100
 
 // Colors
 # define BLACK		0x000000FF
@@ -78,20 +79,47 @@ typedef struct s_fractal
 	double			zoom;
 	double			zoom_factor;
 	double			escape_value; // hypotenuse
-	int				iterations_def; // value tight with the image quality and rendering speed
-	int				color;
+	int				type;
+	unsigned int	iterations_def; // value tight with the image quality and rendering speed
 	unsigned int	r;
 	unsigned int	g;
 	unsigned int	b;
+	unsigned int	color;
+	unsigned int	color2;
+	t_complex		c;
+	
 	
 }				t_fractal;
 
-void	fractal_render(t_fractal *fractal);
-void	fractal_init(t_fractal	*fractal);
-void	handle_pixel(int x, int y, t_fractal *fractal);
-void	data_init(t_fractal	*fractal);
+typedef enum sets
+{
+	MANDELBROT,
+	JULIA,
+	TRICORN,
+}	t_sets;
 
-//*HOOKS*
+// * Initialize Fractol *
+void	render_fractal_type(t_fractal *fractal);
+void	fractal_init(t_fractal *fractal, int type, double c_x, double c_y);
+void	render_fractal_type(t_fractal *fractal);
+
+// * Mandelbroat *
+void	initialize_mandelbroat(t_fractal *fractal);
+void	mandelbroat_pixels(int x, int y, t_fractal *fractal);
+void	mandelbrot_render(t_fractal *fractal);
+
+// * Julia *
+void	initialize_julia(t_fractal *fractal, double c_x, double c_y);
+void	julia_pixels(int x, int y, t_fractal *fractal);
+void	random_julia(t_fractal *fractal_ptr);
+void	julia_render(t_fractal *fractal);
+
+// * Tricorn *
+void	initialize_tricorn(t_fractal *fractal);
+void	tricorn_pixels(int x, int y, t_fractal *fractal);
+void	tricorn_render(t_fractal *fractal);
+
+// *HOOKS*
 //static void keyboard_arrows(t_fractal *fractal);
 void	keyhook(void *param);
 
@@ -99,15 +127,23 @@ void	keyhook(void *param);
 double		map(double unscaled_num, double new_min, double new_max, double old_min, double old_max);
 t_complex	complex_sum(t_complex z1, t_complex z2);
 t_complex	complex_square(t_complex z);
+t_complex	complex_power(t_complex a, int exponent);
+t_complex	complex_conjugate(t_complex a);
 
 // *Strings Utils*
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ft_putstr_fd(char *s, int fd);
+double	ft_atod(char *str);
 
 // *Color Iterations
 void			change_color(t_fractal *fractal);
-unsigned int	reduce_color_intesity(t_fractal *fractal);
+unsigned int	reduce_color_intensity(t_fractal *fractal);
 unsigned int	color_iteration_mapping(int iter, t_fractal *fractal);
+
+// * Messages *
+void	param_error(void);
+void	controls_msg(void);
+void	error_msg(void);
 
 // /**
 //  * Main MLX handle, carries important data in regards to the program.

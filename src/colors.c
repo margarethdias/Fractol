@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 22:18:04 by mdias             #+#    #+#             */
-/*   Updated: 2024/02/29 20:48:33 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/01 17:36:56 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	change_color(t_fractal *fractal)
 		fractal->color = CYAN;
 }
 
-unsigned int	reduce_color_intesity(t_fractal *fractal)
+unsigned int	reduce_color_intensity(t_fractal *fractal)
 {	
 	fractal->r = (fractal->color >> 24 & 0xFF) * 0.100;
 	fractal->g = (fractal->color >> 16 & 0xFF) * 0.100;

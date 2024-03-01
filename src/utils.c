@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 20:06:45 by mdias             #+#    #+#             */
-/*   Updated: 2024/02/05 20:58:12 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/01 15:57:49 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,32 @@ void	ft_putstr_fd(char *s, int fd)
 			i++;
 		}
 	}
+}
+
+double	ft_atod(char *str)
+{
+	long	integer_part;
+	double	decimal_part;
+	double	decimal_factor;
+	int		sign;
+
+	integer_part = 0;
+	decimal_part = 0;
+	sign = 1;
+	decimal_factor = 1;
+	while ((*str >= 9 && *str <= 13) || *str == ' ')
+		++str;
+	if (*str == '-' || *str == '+')
+		if (*str++ == '-')
+			sign *= -1;
+	while ((*str >= '0' && *str <= '9') && *str && *str != '.')
+		integer_part = integer_part * 10 + (*str++ - '0');
+	if (*str == '.')
+		++str;
+	while ((*str >= '0' && *str <= '9') && *str)
+	{
+		decimal_factor /= 10;
+		decimal_part += (*str++ - '0') * decimal_factor;
+	}
+	return ((integer_part + decimal_part) * sign);
 }

@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:19:57 by mdias             #+#    #+#             */
-/*   Updated: 2024/02/05 21:13:49 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/01 17:46:12 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,22 @@ static void	keyboard_arrows(t_fractal *fractal)
 	if (mlx_is_key_down(fractal->mlx, MLX_KEY_UP))
 	{
 		fractal->shift_y -= 0.5 * fractal->zoom;
-		fractal_render(fractal);
+		render_fractal_type(fractal);
 	}
 	if (mlx_is_key_down(fractal->mlx, MLX_KEY_DOWN))
 	{
 		fractal->shift_y += 0.5 * fractal->zoom;
-		fractal_render(fractal);
+		render_fractal_type(fractal);
 	}
 	if (mlx_is_key_down(fractal->mlx, MLX_KEY_LEFT))
 	{
 		fractal->shift_x -= 0.5 * fractal->zoom;
-		fractal_render(fractal);
+		render_fractal_type(fractal);
 	}
 	if (mlx_is_key_down(fractal->mlx, MLX_KEY_RIGHT))
 	{
 		fractal->shift_x += 0.5 * fractal->zoom;
-		fractal_render(fractal);
+		render_fractal_type(fractal);
 	}
 }
 
