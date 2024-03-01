@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fractol.h                                       :+:      :+:    :+:   */
+/*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:27:44 by mdias             #+#    #+#             */
-/*   Updated: 2024/01/31 22:52:38 by mdias            ###   ########.fr       */
+/*   Updated: 2024/02/29 20:52:29 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_FRACTOL_H
-# define FT_FRACTOL_H
+#ifndef FRACTOL_H
+# define FRACTOL_H
 
 # include <stdlib.h>
 # include <stdio.h>
@@ -72,9 +72,17 @@ typedef struct s_fractal
 	double			ymax;
 	double			shift_y;
 	double			shift_x;
+	double			xzoom;
+	double			yzoom;
+	double			initial_zoom;	
+	double			zoom;
+	double			zoom_factor;
 	double			escape_value; // hypotenuse
 	int				iterations_def; // value tight with the image quality and rendering speed
 	int				color;
+	unsigned int	r;
+	unsigned int	g;
+	unsigned int	b;
 	
 }				t_fractal;
 
@@ -95,6 +103,11 @@ t_complex	complex_square(t_complex z);
 // *Strings Utils*
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ft_putstr_fd(char *s, int fd);
+
+// *Color Iterations
+void			change_color(t_fractal *fractal);
+unsigned int	reduce_color_intesity(t_fractal *fractal);
+unsigned int	color_iteration_mapping(int iter, t_fractal *fractal);
 
 // /**
 //  * Main MLX handle, carries important data in regards to the program.
