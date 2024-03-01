@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:05:48 by mdias             #+#    #+#             */
-/*   Updated: 2024/03/01 17:34:05 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/01 19:25:11 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,8 @@ void	controls_msg(void)
 	"\tpress \033[1m\033[38;5;110mESC\033[0m to exit\n" \
 	"\tpress \033[1m\033[38;5;110marrow keys\033[0m to move\n" \
 	"\tuse \033[1m\033[38;5;110mmouse scroll\033[0m for zoom\n" \
-	"\tpress \033[1m\033[38;5;110mTAB\033[0m to change fractal\n" \
 	"\tpress \033[1m\033[38;5;110mC\033[0m to change color\n" \
-	"\t keep \033[1m\033[38;5;110mG\033[0m pressed for glitchy colors\n" \
 	"\nJulia Set constants:\n" \
-	"\tpress \033[1m\033[38;5;110mR\033[0m to randomize \n"\
 	"\tuse \033[1m\033[38;5;110mleft_shift + scroll\033[0m " \
 	"to increase or decrease\n" \
 	"\tuse \033[1m\033[38;5;110mleft_ctrl + mouse \033[0m"\

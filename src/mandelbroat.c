@@ -6,12 +6,11 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 22:27:29 by mdias             #+#    #+#             */
-/*   Updated: 2024/03/01 17:47:46 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/01 19:26:26 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
-
 
 void	initialize_mandelbroat(t_fractal *fractal)
 {
@@ -39,10 +38,10 @@ void	mandelbroat_pixels(int x, int y, t_fractal *fractal)
 	i = 0;
 	z.real = 0.0;
 	z.i = 0.0;
-	c.real = ((fractal->xmax - fractal->xmin) * (x - 0))
-		/ (WIDTH - 0) + fractal->xmin + fractal->shift_x;
-	c.i = ((fractal->ymax - fractal->ymin) * (y - 0))
-		/ (HEIGHT - 0) + fractal->ymin + fractal->shift_y;
+	c.real = ((fractal->xmax - fractal->xmin) * (x - 0)) / (WIDTH - 0)
+		+ fractal->xmin + fractal->shift_x;
+	c.i = ((fractal->ymax - fractal->ymin) * (y - 0)) / (HEIGHT - 0)
+		+ fractal->ymin + fractal->shift_y;
 	while (i < fractal->iterations_def)
 	{
 		z = complex_sum(complex_square(z), c);

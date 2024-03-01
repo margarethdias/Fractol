@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:27:44 by mdias             #+#    #+#             */
-/*   Updated: 2024/03/01 17:47:40 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/01 18:47:04 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ typedef struct s_fractal
 	double			ymax;
 	double			shift_y;
 	double			shift_x;
+	int32_t			mouse_x;
+	int32_t			mouse_y;
 	double			xzoom;
 	double			yzoom;
 	double			initial_zoom;	
@@ -121,7 +123,10 @@ void	tricorn_render(t_fractal *fractal);
 
 // *HOOKS*
 //static void keyboard_arrows(t_fractal *fractal);
-void	keyhook(void *param);
+void		keyhook(void *param);
+void		scrollhook(double xdelta, double ydelta, void *param);
+void		zoom(double ydelta, t_fractal *fr);
+static void	keyboard_arrows(t_fractal *fractal);
 
 // *Math*
 double		map(double unscaled_num, double new_min, double new_max, double old_min, double old_max);

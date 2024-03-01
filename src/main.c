@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:30:09 by mdias             #+#    #+#             */
-/*   Updated: 2024/03/01 17:32:47 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/01 19:17:11 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ static bool	check_input(int argc, char **argv, t_fractal *fractal)
 
 int	main(int argc, char **argv)
 {
-	t_fractal		fractal;
+	t_fractal	fractal;
 
 	if (check_input(argc, argv, &fractal))
 	{
 		render_fractal_type(&fractal);
 		mlx_loop_hook(fractal.mlx, keyhook, &fractal);
-		// mlx_scroll_hook(fractal.mlx, &scrollhook, &fractal);
+		mlx_scroll_hook(fractal.mlx, &scrollhook, &fractal);
 		// mlx_cursor_hook(fractal.mlx, &cursorhook, &fractal);
 		mlx_loop(fractal.mlx);
 	}

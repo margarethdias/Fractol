@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:19:57 by mdias             #+#    #+#             */
-/*   Updated: 2024/03/01 17:46:12 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/01 19:27:25 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,10 @@ void	keyhook(void *param)
 		mlx_close_window(fractal->mlx);
 	}
 }
+
 void	zoom(double ydelta, t_fractal *fr)
-{	
-	double		zoom_factor;
+{
+	double	zoom_factor;
 
 	zoom_factor = 1.1;
 	if (ydelta > 0)
@@ -67,5 +68,30 @@ void	zoom(double ydelta, t_fractal *fr)
 		fr->xmax = fr->xzoom + zoom_factor * (fr->xmax - fr->xzoom);
 		fr->ymin = fr->yzoom - zoom_factor * (fr->yzoom - fr->ymin);
 		fr->ymax = fr->yzoom + zoom_factor * (fr->ymax - fr->yzoom);
+	}
+}
+
+void	scrollhook(double xdelta, double ydelta, void *param)
+{
+	t_fractal	*fractal;
+
+	fractal = param;
+	xdelta = 0;
+	mlx_get_mouse_pos(fractal->mlx, &fractal->mouse_x, &fractal->mouse_y);
+	fractal->xzoom = fractal->xmin + fractal->mouse_x * ((fractal->xmax
+				- fractal->xmin) / WIDTH);
+	fractal->yzoom = fractal->ymin + fractal->mouse_y * ((fractal->ymax
+				- fractal->ymin) / HEIGHT);
+	if (fractal->type == JULIA && mlx_is_key_down(fractal->mlx,
+			MLX_KEY_LEFT_SHIFT))
+	{
+		fractal->c.real += (ydelta / 400) * fractal->zoom;
+		fractal->c.i += (ydelta / 400) * fractal->zoom;
+		render_fractal_type(fractal);
+	}
+	else if (ydelta != 0)
+	{
+		zoom(ydelta, fractal);
+		render_fractal_type(fractal);
 	}
 }

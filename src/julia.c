@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 21:11:55 by mdias             #+#    #+#             */
-/*   Updated: 2024/03/01 17:38:52 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/01 19:24:58 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ void	julia_pixels(int x, int y, t_fractal *fractal)
 	unsigned int	i;
 
 	i = 0;
-	z.real = ((x - 0) * (fractal->xmax - fractal->xmin))
-		/ (WIDTH - 0) + fractal->xmin + fractal->shift_x;
-	z.i = ((y - 0) * (fractal->ymax - fractal->ymin))
-		/ (HEIGHT - 0) + fractal->ymin + fractal->shift_y;
+	z.real = ((x - 0) * (fractal->xmax - fractal->xmin)) / (WIDTH - 0)
+		+ fractal->xmin + fractal->shift_x;
+	z.i = ((y - 0) * (fractal->ymax - fractal->ymin)) / (HEIGHT - 0)
+		+ fractal->ymin + fractal->shift_y;
 	while (i < fractal->iterations_def)
 	{
 		z = complex_sum(complex_square(z), fractal->c);
