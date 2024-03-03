@@ -1,30 +1,48 @@
-NAME	:= fractol
-CFLAGS	:= -Wextra -Wall -Werror -Wunreachable-code -Ofast -g
+NAME	= fractol
+CFLAGS	:= -Wunreachable-code -Ofast -g3 -Wextra -Wall -Werror
 LIBMLX	:= ./.lib/MLX42
+BIN		:= bin
 
-HEADERS	:= -I ./include -I $(LIBMLX)/include
-LIBS	:= $(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm
-SRCS	:= $(shell find ./src -iname "*.c")
-OBJS	:= ${SRCS:.c=.o}
+FILES	= fractal_init.c colors.c utils.c \
+			main.c cursor_hooks.c key_hooks.c \
+			mandelbrot.c julia.c tricorn.c \
+			messages.c complex_math.c \
 
-all: libmlx $(NAME)
+M_PATH	= src
 
-libmlx:
-	@cmake $(LIBMLX) -B $(LIBMLX)/build && make -C $(LIBMLX)/build -j4
+HEADERS	= -I ./include -I $(LIBMLX)/include
+LIBS	= $(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm
+SRCS	= $(addprefix  $(M_PATH)/, $(FILES))
+OBJS	= $(patsubst %, $(BIN)/%, $(notdir $(SRCS:.c=.o)))
 
-%.o: %.c
-	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS) && printf "Compiling: $(notdir $<)"
+all: $(BIN) $(LIBS) $(NAME)
 
 $(NAME): $(OBJS)
 	@$(CC) $(OBJS) $(LIBS) $(HEADERS) -o $(NAME)
 
+$(LIBS):
+ifeq ($(wildcard $(LIBMLX)/build/ ), )
+	@if [ ! -d "$(LIBMLX)" ]; then \
+		cd ./.lib && git clone https://github.com/codam-coding-college/MLX42.git; \
+	fi
+	@cd ./.lib/MLX42/ && sed -i "s/(VERSION 3.18.0)/(VERSION 3.16.0)/" CMakeLists.txt
+	@cd ./.lib/MLX42/ && cmake -B build
+	@cd ./.lib/MLX42/ && cmake --build build -j4
+endif
+
+$(BIN):
+	@mkdir -p $(BIN)
+
+$(BIN)/%.o: $(M_PATH)/%.c | $(BIN)
+	@$(CC) $(CFLAGS) $(HEADERS) -c $< -o $@
+	@printf "Compiling: $(notdir $<)\n"
+
 clean:
-	@rm -rf $(OBJS)
-	@rm -rf $(LIBMLX)/build
+	@rm -rf $(BIN)
 
 fclean: clean
 	@rm -rf $(NAME)
 
 re: clean all
 
-.PHONY: all, clean, fclean, re, libmlx
+.PHONY: all, clean, fclean, re
