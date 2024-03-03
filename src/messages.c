@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:05:48 by mdias             #+#    #+#             */
-/*   Updated: 2024/03/03 16:01:20 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/03 16:13:02 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ void	controls_msg(void)
 	ft_putendl_fd("", 1);
 	ft_putendl_fd("Julia Set constants:", 1);
 	ft_putendl_fd("\tleft_shift + scroll to increase or decrease", 1);
-	ft_putendl_fd("\tleft_ctrl + mouse to change constants based on mouse position", 1);
+	ft_putendl_fd("\tleft_ctrl + mouse change constants based on mouse move", 1);
 }
