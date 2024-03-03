@@ -23,7 +23,7 @@ $(NAME): $(OBJS)
 $(LIBS):
 ifeq ($(wildcard $(LIBMLX)/build/ ), )
 	@if [ ! -d "$(LIBMLX)" ]; then \
-	@mkdir .lib &&	cd ./.lib && git clone https://github.com/codam-coding-college/MLX42.git; \
+		cd ./.lib && git clone https://github.com/codam-coding-college/MLX42.git; \
 	fi
 	@cd ./.lib/MLX42/ && sed -i "s/(VERSION 3.18.0)/(VERSION 3.16.0)/" CMakeLists.txt
 	@cd ./.lib/MLX42/ && cmake -B build
