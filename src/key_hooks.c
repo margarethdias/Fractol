@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hooks.c                                            :+:      :+:    :+:   */
+/*   key_hooks.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:19:57 by mdias             #+#    #+#             */
-/*   Updated: 2024/03/03 15:54:33 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/03 18:12:32 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ void	keyhook(void *param)
 	if (mlx_is_key_down(fractal->mlx, MLX_KEY_ESCAPE))
 	{
 		mlx_close_window(fractal->mlx);
+	}
+	else if (mlx_is_key_down(fractal->mlx, MLX_KEY_C))
+	{
+		change_color(fractal);
+		render_fractal_type(fractal);
 	}
 }
 

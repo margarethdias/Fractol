@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 18:14:46 by mdias             #+#    #+#             */
-/*   Updated: 2024/03/03 15:32:49 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/03 18:52:02 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void	cursorhook(double xmouse, double ymouse, void *param)
 	t_fractal	*fractal;
 
 	fractal = (t_fractal *)param;
-	xmouse = 0;
-	ymouse = 0;
+	(void) xmouse;
+	(void) ymouse;
 	mlx_get_mouse_pos(fractal->mlx, &fractal->mouse_x,
 		&fractal->mouse_y);
 	if (fractal->type == JULIA
@@ -52,7 +52,7 @@ void	cursorhook(double xmouse, double ymouse, void *param)
 		fractal->c.real = ((fractal->mouse_x) * (fractal->xmax - fractal->xmin)
 				* 0.9) / (WIDTH) + (fractal->xmin * 0.9) + fractal->shift_x;
 		fractal->c.i = ((fractal->mouse_y) * (fractal->ymax - fractal->ymin)
-				* 0.9) / (HEIGHT) + (fractal->ymin * 0.9) + fractal->shift_y;
+				* 0.9) / (HEIGHT) + (fractal->ymin * 0.9) + fractal->shift_x;
 		render_fractal_type(fractal);
 	}
 }

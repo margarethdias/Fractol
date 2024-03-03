@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelbroat.c                                      :+:      :+:    :+:   */
+/*   mandelbrot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 22:27:29 by mdias             #+#    #+#             */
-/*   Updated: 2024/03/02 21:09:37 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/03 18:16:34 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	initialize_mandelbroat(t_fractal *fractal)
 {
 	fractal->name = "Mandelbrot";
-	fractal->color = VIOLET;
+	fractal->color = PURPLE;
 	fractal->type = MANDELBROT;
 	fractal->escape_value = 4.0;
 	fractal->iterations_def = ESCAPE_COUNT;

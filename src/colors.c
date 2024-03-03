@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 22:18:04 by mdias             #+#    #+#             */
-/*   Updated: 2024/03/02 19:23:04 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/03 18:31:44 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	change_color(t_fractal *fractal)
 {
-	if (fractal->color == CYAN)
+	if (fractal->color == PURPLE)
 		fractal->color = GOLD;
 	else if (fractal->color == GOLD)
 		fractal->color = TOMATO;
@@ -33,7 +33,7 @@ void	change_color(t_fractal *fractal)
 	else if (fractal->color == MAGENTA)
 		fractal->color = YELLOW;
 	else
-		fractal->color = CYAN;
+		fractal->color = PURPLE;
 }
 
 unsigned int	reduce_color_intensity(t_fractal *fractal)
