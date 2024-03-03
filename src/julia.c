@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 21:11:55 by mdias             #+#    #+#             */
-/*   Updated: 2024/03/02 21:12:38 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/03 15:28:28 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	initialize_julia(t_fractal *fractal, double c_x, double c_y)
 {
 	fractal->name = "Julia";
 	fractal->type = JULIA;
-	fractal->color = PURPLE;
-	fractal->color2 = ORANGE;
+	fractal->color = ORANGER;
+	fractal->color2 = PURPLE;
 	fractal->escape_value = 4.0;
 	fractal->iterations_def = ESCAPE_COUNT;
 	fractal->shift_x = 0.0;

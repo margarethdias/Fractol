@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 20:06:45 by mdias             #+#    #+#             */
-/*   Updated: 2024/03/02 20:58:40 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/03 15:51:12 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ double	ft_atod(char *str)
 	return ((integer_part + decimal_part) * sign);
 }
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(const char *s, int fd)
 {
 	if (s == NULL)
 		return ;

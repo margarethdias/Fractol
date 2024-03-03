@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 00:49:30 by mdias             #+#    #+#             */
-/*   Updated: 2024/03/02 21:07:50 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/03 15:32:01 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	fractal_init(t_fractal *fractal, int type, double c_x, double c_y)
 		initialize_julia(fractal, c_x, c_y);
 	if (type == TRICORN)
 		initialize_tricorn(fractal);
-	if (type == MANDELBOX)
-		initialize_mandelbox(fractal);
 	controls_msg();
 	fractal->mlx = mlx_init(WIDTH, HEIGHT, fractal->name, false);
 	if (!fractal->mlx)
@@ -47,9 +45,5 @@ void	render_fractal_type(t_fractal *fractal)
 	if (fractal->type == TRICORN)
 	{
 		tricorn_render(fractal);
-	}
-	if (fractal->type == MANDELBOX)
-	{
-		mandelbox_render(fractal);
 	}
 }
