@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 22:18:04 by mdias             #+#    #+#             */
-/*   Updated: 2024/03/03 18:31:44 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/03 19:19:58 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ unsigned int	color_iteration_mapping(int iter, t_fractal *fractal)
 	}
 	else
 	{
-		if (mlx_is_key_down(fractal->mlx, MLX_KEY_CAPS_LOCK))
+		if (mlx_is_key_down(fractal->mlx, MLX_KEY_G))
 			change_color(fractal);
 		fractal->r *= ((smoothed_factor) * 0.9);
 		fractal->g *= ((smoothed_factor) * 0.9);
