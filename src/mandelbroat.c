@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 22:27:29 by mdias             #+#    #+#             */
-/*   Updated: 2024/03/02 21:00:55 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/02 21:09:37 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	initialize_mandelbroat(t_fractal *fractal)
 	fractal->type = MANDELBROT;
 	fractal->escape_value = 4.0;
 	fractal->iterations_def = ESCAPE_COUNT;
-	fractal->shift_y = -0.7;
-	fractal->shift_x = 0.0;
+	fractal->shift_y = 0.0;
+	fractal->shift_x = -0.5;
 	fractal->initial_zoom = 0.7;
 	fractal->zoom = 1.0;
 	fractal->xmin = -2.0 * fractal->initial_zoom;

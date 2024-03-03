@@ -6,28 +6,11 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 00:49:30 by mdias             #+#    #+#             */
-/*   Updated: 2024/03/02 19:47:57 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/02 21:07:50 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
-
-// void	select_fractal(t_fractal *fractal)
-// {
-// 	if (fractal->type == MANDELBROT)
-// 	{
-// 		fractal->c.real = (drand48() * 1.2) - 0.8;
-// 		fractal->c.i = (drand48() * 1.4) - 0.7;
-// 		initialize_julia(fractal, fractal->c.real, fractal->c.i);
-// 	}
-// 	else if (fractal->type == JULIA)
-// 		initialize_tricorn(fractal);
-// 	else if (fractal->type == TRICORN)
-// 		initialize_mandelbroat(fractal);
-// 	else
-// 		initialize_mandelbroat(fractal);
-// 	mlx_set_window_title(fractal->mlx, fractal->name);
-// }
 
 void	fractal_init(t_fractal *fractal, int type, double c_x, double c_y)
 {
