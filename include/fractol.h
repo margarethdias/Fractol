@@ -6,7 +6,7 @@
 /*   By: mdias <mdias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:27:44 by mdias             #+#    #+#             */
-/*   Updated: 2024/03/01 18:47:04 by mdias            ###   ########.fr       */
+/*   Updated: 2024/03/02 20:59:00 by mdias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,6 @@
 # define GRAY		0x808080FF
 # define BROWN		0xA52A2AFF
 
-# define ERROR_MSG "Please, use the right input: \n\t\"./fractol mandelbrot\" or \n\t\"./julia <value 1> <value 2>\" \n"
-
 /*Struct to define the complex values*/
 typedef struct	s_complex
 {
@@ -81,6 +79,8 @@ typedef struct s_fractal
 	double			zoom;
 	double			zoom_factor;
 	double			escape_value; // hypotenuse
+	double			box_size;
+	double			scale;
 	int				type;
 	unsigned int	iterations_def; // value tight with the image quality and rendering speed
 	unsigned int	r;
@@ -98,6 +98,7 @@ typedef enum sets
 	MANDELBROT,
 	JULIA,
 	TRICORN,
+	MANDELBOX
 }	t_sets;
 
 // * Initialize Fractol *
@@ -121,12 +122,17 @@ void	initialize_tricorn(t_fractal *fractal);
 void	tricorn_pixels(int x, int y, t_fractal *fractal);
 void	tricorn_render(t_fractal *fractal);
 
+// * Mandelbox *
+void	initialize_mandelbox(t_fractal *fractal);
+void	mandelbox_pixels(int x, int y, t_fractal *fractal);
+void	mandelbox_render(t_fractal *fractal);
+
 // *HOOKS*
-//static void keyboard_arrows(t_fractal *fractal);
-void		keyhook(void *param);
-void		scrollhook(double xdelta, double ydelta, void *param);
-void		zoom(double ydelta, t_fractal *fr);
-static void	keyboard_arrows(t_fractal *fractal);
+void	keyhook(void *param);
+void	scrollhook(double xdelta, double ydelta, void *param);
+void	zoom(double ydelta, t_fractal *fr);
+void	keyboard_arrows(t_fractal *fractal);
+void	cursorhook(double xmouse, double ymouse, void *param);
 
 // *Math*
 double		map(double unscaled_num, double new_min, double new_max, double old_min, double old_max);
@@ -139,6 +145,7 @@ t_complex	complex_conjugate(t_complex a);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ft_putstr_fd(char *s, int fd);
 double	ft_atod(char *str);
+void	ft_putendl_fd(char *s, int fd);
 
 // *Color Iterations
 void			change_color(t_fractal *fractal);
